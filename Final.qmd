@@ -1,0 +1,29 @@
+---
+title: "Final"
+author: "Lea Lambdin"
+format: pdf
+GitHub Repository:
+
+https://github.com/LeaLambdin/ENVS-193DS_spring-2026_final
+---
+
+```{r}
+```{r}
+library(tidyverse)
+library(janitor)
+library(rstatix)
+library(ggpubr)
+
+# read data here once downloaded
+# example:
+# data <- read_csv("../data/datafile.csv")
+```
+
+## Problem 1
+
+### a.
+
+In part 1, they likely used a logistic regression. The response variable is whether American Avocets used a microhabitat (yes/no), and the predictor variable is distance to the water edge. Logistic regression is commonly used when the response variable is binary and the goal is to determine whether a predictor affects the probability of an outcome.
+
+In part 2, they likely used a chi-square test of independence. The variables are bird species (categorical) and habitat type (categorical), and the test evaluates whether there is an association between the two categorical variables.
+
