@@ -27,3 +27,14 @@ In part 1, they likely used a logistic regression. The response variable is whet
 
 In part 2, they likely used a chi-square test of independence. The variables are bird species (categorical) and habitat type (categorical), and the test evaluates whether there is an association between the two categorical variables.
 
+### b.
+
+Part 1 rewrite: 
+
+American Avocet microhabitat use changed with distance from the water edge. Areas closer to or farther from the water edge were used differently by American Avocets.
+
+Part 2 rewrite: 
+
+Habitat use differed among the three bird species. American Avocets, Forster’s Terns, and Black-necked Stilts were associated with different habitat types within the San Francisco Bay.
+
+
