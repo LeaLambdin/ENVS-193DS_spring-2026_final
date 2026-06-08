@@ -162,3 +162,76 @@ model_2_residuals <- simulateResiduals(
 # display diagnostic plots for the simulated residuals
 plot(model_2_residuals)
 ```
+
+### h.
+
+```{r}
+# create prediction data using the same ant species levels as the model
+prediction_data <- expand_grid(
+  height_cm = seq(
+    min(nests_clean$height_cm),
+    max(nests_clean$height_cm),
+    length.out = 100
+  ),
+  ant_species = levels(nests_clean$ant_species)
+) |>
+  mutate(
+    ant_species = factor(
+      ant_species,
+      levels = levels(nests_clean$ant_species)
+    ),
+    ant_species_full = case_when(
+      ant_species == "AB" ~ "Crematogaster sjostedti",
+      ant_species == "RRB" ~ "Crematogaster mimosae",
+      ant_species == "BBR" ~ "Crematogaster nigriceps"
+    )
+  )
+
+# generate model predictions with standard errors
+model_predictions <- predict(
+  model_2,
+  newdata = prediction_data,
+  type = "link",
+  se.fit = TRUE
+)
+
+# convert predictions from log-odds to probability scale
+prediction_data <- prediction_data |>
+  mutate(
+    fit = plogis(model_predictions$fit),
+    lower_ci = plogis(model_predictions$fit - 1.96 * model_predictions$se.fit),
+    upper_ci = plogis(model_predictions$fit + 1.96 * model_predictions$se.fit)
+  )
+
+# plot observed data with model predictions and 95% confidence intervals
+ggplot() +
+  geom_jitter(
+    data = nests_clean,
+    aes(x = height_cm, y = case_control),
+    width = 0,
+    height = 0.03,
+    alpha = 0.4,
+    color = "gray40"
+  ) +
+  geom_ribbon(
+    data = prediction_data,
+    aes(x = height_cm, ymin = lower_ci, ymax = upper_ci),
+    fill = "lightsalmon",
+    alpha = 0.4
+  ) +
+  geom_line(
+    data = prediction_data,
+    aes(x = height_cm, y = fit),
+    color = "darkred",
+    linewidth = 1.2
+  ) +
+  facet_wrap(~ ant_species_full) +
+  labs(
+    x = "Tree height (cm)",
+    y = "Probability of bird nest occurrence"
+  ) +
+  theme_classic() +
+  theme(
+    legend.position = "none"
+  )
+```
