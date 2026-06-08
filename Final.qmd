@@ -17,6 +17,7 @@ library(DHARMa)
 
 #read in data
 nests <- read_csv("data/nest_data_final.csv")
+my_data <- read_csv("data/my_data.csv")
 ```
 
 
@@ -305,3 +306,42 @@ The feedback I received focused on making the visualization easier to interpret 
 
 One analysis I could use is a simple linear regression examining the relationship between sun exposure time (minutes per day) and pages read (pages per day). This analysis is appropriate because my research question asks whether increased sun exposure is associated with changes in energy level, which I measured as the number of pages read. The response variable, pages read, is a continuous quantitative variable, and the predictor variable, sun exposure time, is also a continuous quantitative variable measured in minutes per day. Linear regression is appropriate because it tests whether there is a relationship between two continuous variables and estimates how changes in sun exposure are associated with changes in pages read.
 
+### c.
+
+```{r}
+# convert sun exposure from character to numeric
+my_data <- my_data |>
+  mutate(
+    `Sun exposure (min)` = as.numeric(`Sun exposure (min)`)
+  )
+
+# create a linear regression model relating pages read
+# to sun exposure time
+pages_model <- lm(
+  `Pages Read` ~ `Sun exposure (min)`,
+  data = my_data
+)
+
+# check model assumptions with diagnostic plots
+par(mfrow = c(2, 2))
+plot(pages_model)
+par(mfrow = c(1, 1))
+```
+
+#### Assumption checks
+
+Diagnostic plots were examined to assess the assumptions of linear regression. The Residuals vs Fitted plot did not show a strong pattern, suggesting the assumption of linearity was reasonably met. The Q-Q plot showed some deviation from normality at the extremes, but most points followed the reference line. The Scale-Location and Residuals vs Leverage plots did not indicate major violations of homoscedasticity or influential observations. Overall, the assumptions were sufficiently met to proceed with the analysis.
+
+#### Analysis
+
+```{r}
+# display linear regression results
+summary(pages_model)
+```
+
+#### Effect size
+
+```{r}
+# calculate R-squared as an effect size
+summary(pages_model)$r.squared
+```
