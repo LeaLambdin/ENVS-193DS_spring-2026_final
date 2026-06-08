@@ -280,3 +280,23 @@ prediction_600
 ### k.
 
 As shown in Figure 1, the relationship between tree height and the probability of nest occurrence differed among acacia ant species. The probability of nest occurrence generally increased with tree height, but the strength of this relationship varied by ant species. At the tallest tree height in the dataset (600 cm), the predicted probability of nest occurrence was approximately 0.205 for Crematogaster sjostedti, 0.741 for Crematogaster mimosae, and 1.000 for Crematogaster nigriceps. These results suggest that both tree height and acacia ant species influence nest occurrence and that the effect of tree height depends on the ant species present. The authors suggest that birds preferentially nest in trees occupied by certain ant species because differences in ant behavior and tree defense can affect tree structure, browsing pressure from herbivores, and the suitability of trees as nesting habitat.
+
+## Problem 3
+
+### a.
+
+How are the visualizations different from each other in the way you have represented your data?
+
+The exploratory visualizations from Homework 2 used traditional statistical graphics, including a bar chart of average pages read across UV exposure categories and a scatterplot showing the relationship between sun exposure and pages read. In contrast, the affective visualization used flowers, petals, moons, colors, and flower size to represent multiple variables simultaneously, making the data more visually engaging and emphasizing the overall experience of each day rather than focusing on statistical summaries.
+
+What similarities do you see between all your visualizations?
+
+All of the visualizations used the same personal dataset and focused on relationships among UV exposure, sun exposure time, sleep, and pages read. Although the visual style differed, each visualization was intended to communicate patterns in energy levels and how they may relate to sunlight exposure.
+
+What patterns do you see in each visualization? Are these different between visualizations? If so, why? If not, why not?
+
+The exploratory visualizations showed that there was no strong relationship between sun exposure and pages read, with a nearly flat trend line and similar average pages read across UV categories. The affective visualization showed the same overall pattern, but it made day-to-day differences in sleep, UV exposure, and sun exposure more noticeable because multiple variables were displayed together in a single flower. The patterns were generally similar because both visualizations used the same data, but the affective visualization emphasized individual daily experiences rather than statistical relationships.
+
+What kinds of feedback did you get during week 9 in workshop or from the instructors? How did you implement or try those suggestions?
+
+The feedback I received focused on making the visualization easier to interpret by clearly explaining what each visual element represented and improving the legend. I implemented this feedback by creating a detailed key that explained how flower color represented UV index, flower size represented sun exposure time, petals represented pages read, and moons represented sleep hours. These changes made the visualization easier for viewers to understand while preserving the creative design.
