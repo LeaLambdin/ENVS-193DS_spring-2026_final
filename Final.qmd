@@ -8,10 +8,13 @@ https://github.com/LeaLambdin/ENVS-193DS_spring-2026_final
 ---
 
 ```{r}
+
+#install packages
 library(tidyverse)
 library(janitor)
 library(rstatix)
 
+#read in data
 nests <- read_csv("data/nest_data_final.csv")
 ```
 
@@ -44,8 +47,14 @@ One additional variable that could influence American Avocet microhabitat use is
 
 ```{r}
 nests_clean <- nests |>
+
+  # keep variables needed for analysis
   select(case_control, height_cm, ant_species) |>
+
+  # keep only the three focal ant species
   filter(ant_species %in% c("AB", "RRB", "BBR")) |>
+
+  # reorder factor levels and add full species names
   mutate(
     ant_species = factor(
       ant_species,
@@ -58,7 +67,9 @@ nests_clean <- nests |>
     )
   )
 
+# display structure of cleaned data
 str(nests_clean)
 
+# display 10 random rows
 slice_sample(nests_clean, n = 10)
 ```
