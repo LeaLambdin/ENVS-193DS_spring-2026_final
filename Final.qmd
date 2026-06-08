@@ -8,16 +8,13 @@ https://github.com/LeaLambdin/ENVS-193DS_spring-2026_final
 ---
 
 ```{r}
-```{r}
 library(tidyverse)
 library(janitor)
 library(rstatix)
-library(ggpubr)
 
-# read data here once downloaded
-# example:
-# data <- read_csv("../data/datafile.csv")
+nests <- read_csv("data/nest_data_final.csv")
 ```
+
 
 ## Problem 1
 
@@ -40,3 +37,28 @@ Habitat use differed among the three bird species. American Avocets, Forster’s
 ### c.
 
 One additional variable that could influence American Avocet microhabitat use is native plant percent cover, measured as the percent of ground covered by native plants within a sampling plot. This is a continuous numeric variable measured in percent, and it could influence habitat use because plant cover may affect nesting protection, visibility, predator risk, and access to foraging areas.
+
+## Problem 2
+
+### a.
+
+```{r}
+nests_clean <- nests |>
+  select(case_control, height_cm, ant_species) |>
+  filter(ant_species %in% c("AB", "RRB", "BBR")) |>
+  mutate(
+    ant_species = factor(
+      ant_species,
+      levels = c("AB", "RRB", "BBR")
+    ),
+    ant_species_full = case_when(
+      ant_species == "AB" ~ "Crematogaster sjostedti",
+      ant_species == "RRB" ~ "Crematogaster mimosae",
+      ant_species == "BBR" ~ "Crematogaster nigriceps"
+    )
+  )
+
+str(nests_clean)
+
+slice_sample(nests_clean, n = 10)
+```
