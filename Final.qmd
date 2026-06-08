@@ -13,6 +13,7 @@ https://github.com/LeaLambdin/ENVS-193DS_spring-2026_final
 library(tidyverse)
 library(janitor)
 library(rstatix)
+library(DHARMa)
 
 #read in data
 nests <- read_csv("data/nest_data_final.csv")
@@ -149,3 +150,15 @@ AIC(model_1, model_2)
 
 The best model as determined by Akaike's Information Criterion (AIC) included tree height, acacia ant species, and the interaction between tree height and acacia ant species as predictors of nest occurrence. This model had a lower AIC value than the model that included only the main effects of tree height and acacia ant species.
 
+### g. 
+
+```{r, fig.width=7, fig.height=6}
+# simulate residuals for the selected logistic regression model
+# the selected model includes tree height, ant species, and their interaction
+model_2_residuals <- simulateResiduals(
+  fittedModel = model_2
+)
+
+# display diagnostic plots for the simulated residuals
+plot(model_2_residuals)
+```
