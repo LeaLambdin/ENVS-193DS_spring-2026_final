@@ -73,3 +73,9 @@ str(nests_clean)
 # display 10 random rows
 slice_sample(nests_clean, n = 10)
 ```
+
+### b.
+
+In this data set, a value of 1 indicates that a bird nest was present in the tree, while a value of 0 indicates that no bird nest was present. Biologically, these values represent whether a tree was used or not used as nesting habitat by birds.
+
+
