@@ -378,3 +378,8 @@ ggplot(my_data, aes(x = `Sun exposure (min)`, y = `Pages Read`)) +
   # use non-default theme
   theme_classic()
 ```
+
+### e.
+
+Figure 2. Relationship between sun exposure time and pages read. 
+Dark green points represent individual daily observations of pages read and sun exposure time. The orange line represents the fitted linear regression model describing the relationship between sun exposure time and pages read. The light peach shaded band surrounding the regression line represents the 95% confidence interval around the model predictions. The figure shows the underlying data used in the analysis as well as the estimated trend between the two variables.
