@@ -119,3 +119,23 @@ model_table <- tibble(
 # display model table
 model_table
 ```
+
+### e.
+
+```{r}
+# run logistic regression model without interaction
+# this model tests whether tree height and ant species predict nest occurrence
+model_1 <- glm(
+  case_control ~ height_cm + ant_species,
+  data = nests_clean,
+  family = binomial
+)
+
+# run logistic regression model with interaction
+# this model tests whether the effect of tree height depends on ant species
+model_2 <- glm(
+  case_control ~ height_cm * ant_species,
+  data = nests_clean,
+  family = binomial
+)
+```
