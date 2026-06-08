@@ -88,3 +88,34 @@ Acacia ant species
 
 Acacia ant species is a categorical variable with three levels in this analysis: Crematogaster sjostedti, Crematogaster mimosae, and Crematogaster nigriceps. Ant species may influence the probability of nest occurrence because different ant species vary in how aggressively they defend trees from browsing mammals, and birds preferentially nested in trees occupied by strongly defensive ant species. This information was discussed in the Introduction and study rationale, where the authors explain the relationship between ant mutualists and bird nest-site selection.
 
+### d.
+
+```{r}
+# create a table describing the models that will be compared
+model_table <- tibble(
+
+  # model identifier
+  model_number = c(1, 2),
+
+  # response variable for each model
+  response_variable = c(
+    "case_control",
+    "case_control"
+  ),
+
+  # predictors included in each model
+  predictors = c(
+    "height_cm + ant_species",
+    "height_cm + ant_species"
+  ),
+
+  # indicate whether an interaction term is included
+  interaction_term = c(
+    "No",
+    "height_cm × ant_species"
+  )
+)
+
+# display model table
+model_table
+```
