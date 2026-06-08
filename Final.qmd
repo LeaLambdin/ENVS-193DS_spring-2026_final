@@ -276,3 +276,7 @@ prediction_600 <- prediction_600 |>
 # display predicted probabilities
 prediction_600
 ```
+
+### k.
+
+As shown in Figure 1, the relationship between tree height and the probability of nest occurrence differed among acacia ant species. The probability of nest occurrence generally increased with tree height, but the strength of this relationship varied by ant species. At the tallest tree height in the dataset (600 cm), the predicted probability of nest occurrence was approximately 0.205 for Crematogaster sjostedti, 0.741 for Crematogaster mimosae, and 1.000 for Crematogaster nigriceps. These results suggest that both tree height and acacia ant species influence nest occurrence and that the effect of tree height depends on the ant species present. The authors suggest that birds preferentially nest in trees occupied by certain ant species because differences in ant behavior and tree defense can affect tree structure, browsing pressure from herbivores, and the suitability of trees as nesting habitat.
