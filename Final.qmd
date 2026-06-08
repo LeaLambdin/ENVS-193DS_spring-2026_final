@@ -300,3 +300,8 @@ The exploratory visualizations showed that there was no strong relationship betw
 What kinds of feedback did you get during week 9 in workshop or from the instructors? How did you implement or try those suggestions?
 
 The feedback I received focused on making the visualization easier to interpret by clearly explaining what each visual element represented and improving the legend. I implemented this feedback by creating a detailed key that explained how flower color represented UV index, flower size represented sun exposure time, petals represented pages read, and moons represented sleep hours. These changes made the visualization easier for viewers to understand while preserving the creative design.
+
+### b.
+
+One analysis I could use is a simple linear regression examining the relationship between sun exposure time (minutes per day) and pages read (pages per day). This analysis is appropriate because my research question asks whether increased sun exposure is associated with changes in energy level, which I measured as the number of pages read. The response variable, pages read, is a continuous quantitative variable, and the predictor variable, sun exposure time, is also a continuous quantitative variable measured in minutes per day. Linear regression is appropriate because it tests whether there is a relationship between two continuous variables and estimates how changes in sun exposure are associated with changes in pages read.
+
