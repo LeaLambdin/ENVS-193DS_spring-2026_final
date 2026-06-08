@@ -78,4 +78,13 @@ slice_sample(nests_clean, n = 10)
 
 In this data set, a value of 1 indicates that a bird nest was present in the tree, while a value of 0 indicates that no bird nest was present. Biologically, these values represent whether a tree was used or not used as nesting habitat by birds.
 
+### c. 
+
+Tree height
+
+Tree height is a continuous variable measured in centimeters. As tree height increases, the probability of nest occurrence may increase because taller trees provide more space and structure for nesting and may offer better protection from predators. This information was found in the Methods section (nest tree surveys/data collection) where tree characteristics, including height, were measured for nest and available trees.
+
+Acacia ant species
+
+Acacia ant species is a categorical variable with three levels in this analysis: Crematogaster sjostedti, Crematogaster mimosae, and Crematogaster nigriceps. Ant species may influence the probability of nest occurrence because different ant species vary in how aggressively they defend trees from browsing mammals, and birds preferentially nested in trees occupied by strongly defensive ant species. This information was discussed in the Introduction and study rationale, where the authors explain the relationship between ant mutualists and bird nest-site selection.
 
