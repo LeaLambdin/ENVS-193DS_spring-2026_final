@@ -1,7 +1,11 @@
 ---
 title: "Final"
 author: "Lea Lambdin"
-format: pdf
+date: "2026-06-08"
+format:
+  pdf:
+    toc: true
+---
 GitHub Repository:
 
 https://github.com/LeaLambdin/ENVS-193DS_spring-2026_final
