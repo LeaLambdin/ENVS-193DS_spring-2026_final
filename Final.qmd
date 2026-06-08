@@ -345,3 +345,36 @@ summary(pages_model)
 # calculate R-squared as an effect size
 summary(pages_model)$r.squared
 ```
+
+### d. 
+
+```{r, fig.width=7, fig.height=5}
+# create visualization showing the linear regression model
+# with underlying data and 95% confidence interval
+ggplot(my_data, aes(x = `Sun exposure (min)`, y = `Pages Read`)) +
+  
+  # show individual observations
+  geom_point(
+    color = "darkgreen",
+    size = 3,
+    alpha = 0.7
+  ) +
+  
+  # show model prediction line and confidence interval
+  geom_smooth(
+    method = "lm",
+    se = TRUE,
+    color = "darkorange",
+    fill = "peachpuff"
+  ) +
+  
+  # label axes with units
+  labs(
+    x = "Sun exposure time (minutes)",
+    y = "Pages read (pages)",
+    title = "Relationship between sun exposure time and pages read"
+  ) +
+  
+  # use non-default theme
+  theme_classic()
+```
