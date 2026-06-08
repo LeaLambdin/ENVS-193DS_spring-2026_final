@@ -239,3 +239,40 @@ ggplot() +
 ### i. 
 
 Figure 1. Probability of bird nest occurrence increases with tree height and varies among acacia ant species. Points represent individual trees, where values of 0 indicate no bird nest was present and values of 1 indicate a bird nest was present. Dark red lines represent predicted probabilities of nest occurrence from the selected logistic regression model including tree height, acacia ant species, and their interaction. Shaded ribbons represent 95% confidence intervals around the model predictions. Panels show predictions for Crematogaster mimosae, Crematogaster nigriceps, and Crematogaster sjostedti. Data source: Lujan, E., Nielsen, R., Short, Z., Wicks, S., Nderitu Watetu, W., Malingati Khasoha, L., Palmer, T. M., Goheen, J. R., & Alston, J. M. (2023). Data, code, and metadata for: Symbiotic acacia ants drive nesting behavior by birds in an African savanna [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8373322
+
+### j.
+
+```{r}
+# create a new data frame with a tree height of 600 cm
+# for each ant species included in the analysis
+prediction_600 <- tibble(
+  height_cm = 600,
+  ant_species = factor(
+    c("AB", "RRB", "BBR"),
+    levels = levels(nests_clean$ant_species)
+  )
+)
+
+# add full scientific names for clarity
+prediction_600 <- prediction_600 |>
+  mutate(
+    ant_species_full = case_when(
+      ant_species == "AB" ~ "Crematogaster sjostedti",
+      ant_species == "RRB" ~ "Crematogaster mimosae",
+      ant_species == "BBR" ~ "Crematogaster nigriceps"
+    )
+  )
+
+# calculate predicted probabilities from the selected model
+prediction_600 <- prediction_600 |>
+  mutate(
+    predicted_probability = predict(
+      model_2,
+      newdata = prediction_600,
+      type = "response"
+    )
+  )
+
+# display predicted probabilities
+prediction_600
+```
