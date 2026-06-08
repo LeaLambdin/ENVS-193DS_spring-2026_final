@@ -37,4 +37,6 @@ Part 2 rewrite:
 
 Habitat use differed among the three bird species. American Avocets, Forster’s Terns, and Black-necked Stilts were associated with different habitat types within the San Francisco Bay.
 
+### c.
 
+One additional variable that could influence American Avocet microhabitat use is native plant percent cover, measured as the percent of ground covered by native plants within a sampling plot. This is a continuous numeric variable measured in percent, and it could influence habitat use because plant cover may affect nesting protection, visibility, predator risk, and access to foraging areas.
